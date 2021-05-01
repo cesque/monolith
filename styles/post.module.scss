@@ -1,0 +1,30 @@
+.post {
+    display: flex;
+    flex-direction: column;
+
+    margin: 35vh auto;
+    margin-bottom: 50vh;
+}
+
+.header {
+    padding: 1em 2em;
+    color: white;
+    background: black;
+    font-family: 'Space Mono', monospace;
+    
+    h2 {
+        margin: 0;
+        font-size: 2rem;
+        
+        @media (min-width: 600px) {
+            font-size: 4rem;
+        }
+    }
+}
+
+.content {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
