@@ -5,6 +5,24 @@
     line-height: 1.35;
 }
 
+.ghost-content .element-container {
+    &.p, &.ul, &.ol {
+        a {
+            border-bottom: 2px solid black;
+            // background: black;
+            // color: white;
+            // padding: 3px 8px;
+        }
+
+        b, strong {
+            background: black;
+            color: white;
+            padding: 3px 8px;
+        }
+    }
+
+}
+
 .ghost-content .element-container.h2 {
     padding: 0;
 
