@@ -1,3 +1,5 @@
+import Footer from '../components/Footer.js'
+import Header from '../components/Header'
 import { getPosts, getPost } from '../lib/posts'
 
 import styles from '../styles/post.module.scss'
@@ -122,12 +124,16 @@ function renderElement(element, index) {
 }
 
 export default function PostPage(props) {
-    return <main className={ styles.post }>
-        <header className={ styles.header }>
-            <h2>{ props.post.title }</h2>
-        </header>
-        <section className={ `ghost-content ${styles.content}`}>
-            { props.elements.map(renderElement) }
-        </section>
-    </main>
+    return <div className={ styles.container }>
+        <Header post={ props.post } />
+        <main className={ styles.post }>
+            <header className={ styles.header }>
+                <h2>{ props.post.title }</h2>
+            </header>
+            <section className={ `ghost-content ${styles.content}`}>
+                { props.elements.map(renderElement) }
+            </section>
+        </main>
+        <Footer post={ props.post } />
+    </div>
 }

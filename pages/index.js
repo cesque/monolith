@@ -4,6 +4,8 @@ import Link from 'next/link'
 import styles from '../styles/home.module.scss'
 
 import { getPosts } from '../lib/posts'
+import Header from '../components/Header'
+import Footer from '../components/Footer.js'
 
 export async function getStaticProps(context) {
     let posts = await getPosts()
@@ -24,13 +26,19 @@ export default function Home(props) {
                 <link rel="icon" href="/favicon.ico" />
             </Head>
 
+            <Header />
+
             <main className={ styles.main }>
-                {props.posts.map(post => {
-                    return <Link key={ post.uuid } href={`/${post.slug}`}>
-                        <a className={ styles.postLink }>{ post.title }</a>
-                    </Link>
-                })}
+                <section className={ styles.list }>
+                    { props.posts.map(post => {
+                        return <Link key={ post.uuid } href={`/${post.slug}`}>
+                            <a className={ styles.postLink }>{ post.slug }</a>
+                        </Link>
+                    })}
+                </section>
             </main>
+
+            <Footer />
         </div>
     )
 }

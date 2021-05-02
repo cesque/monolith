@@ -1,3 +1,5 @@
+@import './variables.scss';
+
 .ghost-content {
     padding: 5rem 0;
     line-height: 1.35;
@@ -6,8 +8,8 @@
 .ghost-content .element-container.h2 {
     padding: 0;
 
-    @media (min-width: 600px) {
-        padding: 0 50px;
+    @media (min-width: $breakpoint-small) {
+        padding: 0 $padding-desktop;
     }
 }
 
@@ -16,10 +18,11 @@
     font-family: 'Space Mono', monospace;
     background: black;
     color: white;
-    padding: 20px 50px;
-
-    @media (min-width: 600px) {
+    padding: 20px $padding-mobile;
+    
+    @media (min-width: $breakpoint-small) {
         font-size: 4rem;
+        padding: 20px $padding-desktop;
     }
 }
 
@@ -27,12 +30,16 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 0 50px;
+    padding: 0 $padding-mobile;
     width: 100%;
 
     > * {
         width: 100%;
         max-width: 700px;
+    }
+
+    @media (min-width: $breakpoint-small) {
+        padding: 0 $padding-desktop
     }
 }
 
@@ -88,8 +95,8 @@
     .kg-gallery-image img {
         display: block;
         max-width: 100%;
-        width: 100%;
-        height: auto;
+        height: 100%;
+        object-fit: cover;
     }
 
     figcaption {
@@ -228,7 +235,7 @@
 .ghost-content .element-container.blockquote {
     padding: 0;
 
-    @media (min-width: 600px) {
+    @media (min-width: $breakpoint-small) {
         padding: 0 50px;
     }
 }
@@ -236,4 +243,24 @@
     padding: 20px 50px;
     background: black;
     color: white;
+}
+
+.ghost-content .kg-code-card {
+    border: 2px solid black;
+    display: flex;
+    flex-direction: column;
+
+    pre {
+        padding: 5px 20px;
+        display: block;
+        overflow-x: auto;
+    }
+
+    figcaption {
+        display: block;
+        border-top: 2px solid black;
+        padding: 10px 20px;
+        width: 100%;
+        left: 0;
+    }
 }

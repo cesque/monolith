@@ -1,22 +1,38 @@
+@import './variables.scss';
+
 .main {
+    padding: 25vh 0;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    padding: 25vh 0;
-    
-    @media (min-width: 600px) {
+
+    @media (min-width: $breakpoint-small) {
         padding: 25vh 50px;
+    }
+}
+
+.list {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    
+    @media (min-width: $breakpoint-small) {
+        justify-content: space-between;
     }
 }
 
 .postLink {
     display: block;
-    width: 100%;
-    max-width: 700px;
-    font-size: 1.5rem;
     font-family: 'Space Mono', monospace;
-    padding: 20px 50px;
     background: black;
     color: white;
-    margin-bottom: 10px;
+    margin: 5px;
+    padding: 3px 10px;
+    
+    @media (min-width: $breakpoint-small) {
+        font-size: 1.5rem;
+        padding: 20px 50px;
+        margin: 10px;
+    }
 }
