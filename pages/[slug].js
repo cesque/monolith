@@ -114,11 +114,11 @@ function renderElement(element, index) {
             break
         default:
             let Tag = element.tag
-            output = <Tag key={ index } { ...element.attributes } dangerouslySetInnerHTML={ content } />
+            output = <Tag  { ...element.attributes } dangerouslySetInnerHTML={ content } />
             break
     }
 
-    return <div className={ `element-container ${ element.tag } ${ bubbledClasses.join(' ') }` }>
+    return <div key={ index } className={ `element-container ${ element.tag } ${ bubbledClasses.join(' ') }` }>
         { output }
     </div>
 }

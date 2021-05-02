@@ -264,3 +264,11 @@
         left: 0;
     }
 }
+
+.ghost-content .element-container.pre {
+    pre {
+        border: 2px solid black;
+        padding: 20px 20px;
+        overflow-x: auto;
+    }
+}
