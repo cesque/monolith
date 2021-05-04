@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import Footer from '../components/Footer.js'
 import Header from '../components/Header'
-import { getPosts, getPost } from '../lib/posts'
+import { getPosts, getPost, getDraftPosts } from '../lib/posts'
 
 import styles from '../styles/post.module.scss'
 
@@ -13,10 +13,22 @@ export async function getStaticPaths(context) {
     let paths = posts.map(post => {
         return {
             params: {
-                slug: post.slug,
+                slug: [ post.slug ],
             }
         }
     })
+
+    if(!process.env.VERCEL) {
+        let drafts = await getDraftPosts()
+
+        for(let post of drafts) {
+            paths.push({
+                params: {
+                    slug: [ post.slug, 'draft' ]
+                }
+            })
+        }
+    }
 
     return {
         paths,
@@ -64,7 +76,9 @@ function getElement(element) {
 }
 
 export async function getStaticProps(context) {
-    const post = await getPost(context.params.slug)
+    console.log(context.params.slug)
+    let slug = context.params.slug[0]
+    const post = await getPost(slug, context.params.slug[1] == 'draft')
 
     let elements = getElements(post)
 

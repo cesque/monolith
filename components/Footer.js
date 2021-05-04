@@ -17,17 +17,20 @@ export default class Footer extends React.Component {
     getPublished() {
         if(!this.props.post) return null
 
+        let isDraft = this.props.post.status == 'draft'
+
         let published = DateTime.fromISO(this.props.post.published_at)
         let updated = DateTime.fromISO(this.props.post.updated_at)
+        console.log(updated)
 
         return <div className={ `${styles.row} ${styles.rowDates }` }>
             <div className={ styles.published }>
-                pub{`{`}<b>{ this.formatDate(published) }</b>{`}`}
+                pub{`{`}<b>{ isDraft ? 'draft' : this.formatDate(published) }</b>{`}`}
             </div>
-            { /*updated > published*/ true && <>
+            { (isDraft || (updated > published)) && <>
                     <div className={ styles.separator }>{ this.separator }</div>
                     <div className={ styles.updated }>
-                        upd{`{`}<b>{ this.formatDate(published) }</b>{`}`}
+                        upd{`{`}<b>{ this.formatDate(updated) }</b>{`}`}
                     </div>
                 </>
             }
