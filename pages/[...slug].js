@@ -76,7 +76,6 @@ function getElement(element) {
 }
 
 export async function getStaticProps(context) {
-    console.log(context.params.slug)
     let slug = context.params.slug[0]
     const post = await getPost(slug, context.params.slug[1] == 'draft')
 

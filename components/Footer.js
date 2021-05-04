@@ -21,7 +21,6 @@ export default class Footer extends React.Component {
 
         let published = DateTime.fromISO(this.props.post.published_at)
         let updated = DateTime.fromISO(this.props.post.updated_at)
-        console.log(updated)
 
         return <div className={ `${styles.row} ${styles.rowDates }` }>
             <div className={ styles.published }>
