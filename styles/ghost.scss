@@ -263,6 +263,15 @@
     color: white;
 }
 
+
+.ghost-content code {
+    font-family: 'Inconsolata', monospace;
+    font-weight: bold;
+    letter-spacing: 0.1rem;
+    // padding: 1px 5px;
+    // border: 2px solid black;
+}
+
 .ghost-content .kg-code-card {
     border: 2px solid black;
     display: flex;
@@ -288,5 +297,10 @@
         border: 2px solid black;
         padding: 20px 20px;
         overflow-x: auto;
+    }
+
+    code {
+        letter-spacing: 0.05rem;
+        font-weight: 500;
     }
 }
