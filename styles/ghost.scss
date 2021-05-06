@@ -69,6 +69,12 @@
     }
 }
 
+.ghost-content .element-container.table {
+    table {
+        table-layout: fixed;
+    }
+}
+
 .ghost-content figure {
     padding: 0;
     margin: 3rem 0;
