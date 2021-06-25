@@ -1,7 +1,7 @@
-import Link from 'next/link';
+import Link from 'next/link'
 import React from 'react'
 import styles from '../styles/footer.module.scss'
-import { DateTime } from 'luxon';
+import { DateTime } from 'luxon'
 
 export default class Footer extends React.Component {
     constructor(props) {

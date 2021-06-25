@@ -1,0 +1,20 @@
+@import './variables.scss';
+
+.listContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: $padding-mobile;
+    width: 100%;
+
+    @media (min-width: $breakpoint-small) {
+        padding: $padding-desktop;
+    }
+}
+
+.list {
+    width: 100%;
+    max-width: 700px;
+    margin: 0;
+    padding: 0;
+}

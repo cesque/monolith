@@ -8,7 +8,7 @@ function MyApp({ Component, pageProps }) {
       <link rel="stylesheet" href="https://use.typekit.net/iuc5xfk.css" />
     </Head>
 
-    <Component {...pageProps} />
+    <Component { ...pageProps } />
   </>
 }
 
