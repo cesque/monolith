@@ -1,0 +1,1 @@
+thumbnails get generated in here on build
