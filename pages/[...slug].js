@@ -159,7 +159,6 @@ export default class PostPage extends React.Component {
     }
 
     render() {
-        console.log(getMetaData())
         return <div className={ styles.container }>
             <Head>
                 <title>monolith ⏵ { this.props.post.title }</title>
