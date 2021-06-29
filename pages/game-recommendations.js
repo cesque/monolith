@@ -8,15 +8,15 @@ import Footer from '../components/Footer'
 import Game from '../components/Game'
 
 import gamesList from '../data/games'
-import { saveMetaImage } from '../lib/posts'
+import { uploadOrFetchMetaImage } from '../lib/posts'
 import config from '../lib/config'
 
 export async function getStaticProps(context) {
-    console.log(context)
-    await saveMetaImage(`game-recommendations`)
+    let metaImage = await uploadOrFetchMetaImage(`game-recommendations`)
 
     return {
         props: {
+            metaImage,
             post: {
                 slug: 'game-recommendations',
                 published_at: '2021-06-24T22:58:19.965Z',
@@ -37,7 +37,7 @@ export default class GameRecommendationsPage extends React.Component {
 
                 <meta property="og:title" content={ `monolith ⏵ game recommendations` } />
                 <meta property="og:type" content="article" />
-                <meta property="og:image" content={ config.url + require(`../public/thumbnails/game-recommendations.png`).default.src } />
+                <meta property="og:image" content={ this.props.metaImage } />
                 <meta property="og:description" content={ `monolith ⏵ game recommendations ⏵ by cesque` } />
             </Head>
         

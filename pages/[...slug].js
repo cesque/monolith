@@ -2,7 +2,7 @@ import Head from 'next/head'
 import React from 'react'
 import Footer from '../components/Footer.js'
 import Header from '../components/Header'
-import { getPosts, getPost, getDraftPosts, saveMetaImage } from '../lib/posts'
+import { getPosts, getPost, getDraftPosts, uploadOrFetchMetaImage } from '../lib/posts'
 
 import config from '../lib/config'
 
@@ -94,7 +94,7 @@ export async function getStaticProps(context) {
         }
     }
 
-    await saveMetaImage(post.slug)
+    let metaImage = await uploadOrFetchMetaImage(post.slug)
 
     delete post.data
 
@@ -103,6 +103,7 @@ export async function getStaticProps(context) {
             post,
             elements,
             context,
+            metaImage
         },
     }
 }
@@ -166,7 +167,7 @@ export default class PostPage extends React.Component {
                 <meta property="og:title" content={ `monolith ⏵ ${ this.props.post.title }` } />
                 <meta property="og:type" content="article" />
                 {/* <meta property="og:image" content={ `${ config.url }thumbnails/${ this.props.post.slug }.png` } /> */}
-                <meta property="og:image" content={ config.url + require(`../public/thumbnails/${ this.props.post.slug }.png`).default.src } />
+                <meta property="og:image" content={ this.props.metaImage } />
                 <meta property="og:description" content={ `monolith ⏵ ${ this.props.post.title } ⏵ by cesque` } />
 
             </Head>

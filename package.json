@@ -11,6 +11,7 @@
     "@tryghost/admin-api": "^1.4.1",
     "@tryghost/content-api": "^1.5.4",
     "canvas": "2.6.1",
+    "cloudinary": "^1.26.1",
     "jsdom": "^16.5.3",
     "luxon": "^1.26.0",
     "next": "^11.0.1",
