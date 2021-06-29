@@ -37,7 +37,7 @@ export default class GameRecommendationsPage extends React.Component {
 
                 <meta property="og:title" content={ `monolith ⏵ game recommendations` } />
                 <meta property="og:type" content="article" />
-                <meta property="og:image" content={ `${ config.url }thumbnails/game-recommendations.png` } />
+                <meta property="og:image" content={ config.url + require(`../public/thumbnails/game-recommendations.png`).default.src } />
                 <meta property="og:description" content={ `monolith ⏵ game recommendations ⏵ by cesque` } />
             </Head>
         

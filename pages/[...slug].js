@@ -165,7 +165,8 @@ export default class PostPage extends React.Component {
 
                 <meta property="og:title" content={ `monolith ⏵ ${ this.props.post.title }` } />
                 <meta property="og:type" content="article" />
-                <meta property="og:image" content={ `${ config.url }thumbnails/${ this.props.post.slug }.png` } />
+                {/* <meta property="og:image" content={ `${ config.url }thumbnails/${ this.props.post.slug }.png` } /> */}
+                <meta property="og:image" content={ config.url + require(`../public/thumbnails/${ this.props.post.slug }.png`).default.src } />
                 <meta property="og:description" content={ `monolith ⏵ ${ this.props.post.title } ⏵ by cesque` } />
 
             </Head>

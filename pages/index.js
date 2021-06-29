@@ -52,7 +52,7 @@ export default class Home extends React.Component {
 
                     <meta property="og:title" content={ `monolith ⏵ by cesque` } />
                     <meta property="og:type" content="blog" />
-                    <meta property="og:image" content={ `${ config.url }thumbnails/index.png` } />
+                    <meta property="og:image" content={ config.url + require(`../public/thumbnails/index.png`).default.src } />
 
                     {/* <!-- Include this to make the og:image larger --> */}
                     {/* <meta name="twitter:card" content="summary_large_image"> */}
