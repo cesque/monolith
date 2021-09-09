@@ -119,4 +119,6 @@ export default [
     { name: "Quarries of Scred", link: "https://store.steampowered.com/app/346770/", id: 346770, description: "dig towards treasure and don't make boulders fall on your head" },
     { name: "Path of Exile", link: "https://store.steampowered.com/app/238960/", id: 238960, description: "nowadays i just compare the concept of learning anything to my experience learning how PoE works" },
     { name: "Tricky Towers", link: "https://store.steampowered.com/app/437920/", id: 437920, description: "multiplayer tetris but wind will push your tower over into the ocean and you'll be eliminated" },
+    
+    { name: "Demoncrawl", link: "https://store.steampowered.com/app/1141220/", id: 1141220, description: "minesweeper but it's a roguelike! the game LOVES to bully you, but it also gives you good customisation" },
 ]
