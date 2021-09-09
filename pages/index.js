@@ -4,7 +4,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import styles from '../styles/home.module.scss'
 
-import { getPosts } from '../lib/posts'
+import { getDraftPosts, getPosts } from '../lib/posts'
 import Header from '../components/Header'
 import Footer from '../components/Footer'
 
@@ -19,6 +19,10 @@ export async function getStaticProps(context) {
 
     let posts = await getPosts()
 
+    if(!process.env.VERCEL) {
+        posts.push(...await getDraftPosts())
+    }
+
     let gameRecommendations = {
         published_at: '2021-06-24T22:58:19.965Z',
         uuid: '52a04d99-ec99-4a0f-a4c2-d170b34b5b2c',
@@ -28,8 +32,8 @@ export async function getStaticProps(context) {
     posts.push(gameRecommendations)
 
     posts.sort((a, b) => {
-        let aDate = DateTime.fromISO(a.published_at) || 0
-        let bDate = DateTime.fromISO(b.published_at) || 0
+        let aDate = DateTime.fromISO(a.published_at || a.created_at) || 0
+        let bDate = DateTime.fromISO(b.published_at || a.created_at) || 0
 
         return bDate - aDate
     })
@@ -60,8 +64,11 @@ export default class Home extends React.Component {
                 <main className={ styles.main }>
                     <section className={ styles.list }>
                         { this.props.posts.map(post => {
-                            return <Link key={ post.uuid } href={`/${post.slug}`}>
-                                <a className={ styles.postLink }>{ post.slug }</a>
+                            let classes = [styles.postLink]
+                            if(post.status == 'draft') classes.push(styles.postLinkDraft)
+
+                            return <Link key={ post.uuid } href={ `/${post.slug}${ post.status == 'draft' ? '/draft' : '' }` }>
+                                <a className={ classes.join(' ') }>{ post.slug }</a>
                             </Link>
                         })}
                     </section>
