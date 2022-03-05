@@ -16,6 +16,8 @@
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
+    gap: 20px;
+    max-width: 2000px;
     
     @media (min-width: $breakpoint-small) {
         justify-content: space-between;
@@ -27,18 +29,19 @@
     font-family: 'Space Mono', monospace;
     background: black;
     color: white;
-    margin: 5px;
     padding: 3px 10px;
+    flex-grow: 1;
+    text-align: center;
+    border: 4px solid black;
     
     @media (min-width: $breakpoint-small) {
         font-size: 1.5rem;
         padding: 20px 50px;
-        margin: 10px;
     }
 }
 
 .postLinkDraft {
     background: white;
     color: black;
-    border: 2px solid black;
+    border: 4px solid black;
 }
