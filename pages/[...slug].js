@@ -128,6 +128,7 @@ export default class PostPage extends React.Component {
     
         let extractClasses = { 
             'kg-width-wide': 'wide',
+            'kg-width-full': 'wide',
             'kg-embed-card': 'embed',
         }
     
