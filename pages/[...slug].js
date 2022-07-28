@@ -119,6 +119,8 @@ export default class PostPage extends React.Component {
     }
 
     renderElement(element, index) {
+        if(!element) return null // markdown blocks seem to be adding a bunch of null elements?
+        
         let content = { '__html': element.content }
         let attributes = element.attributes
         if(attributes.class) {
