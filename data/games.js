@@ -121,4 +121,16 @@ export default [
     { name: "Tricky Towers", link: "https://store.steampowered.com/app/437920/", id: 437920, description: "multiplayer tetris but wind will push your tower over into the ocean and you'll be eliminated" },
     
     { name: "Demoncrawl", link: "https://store.steampowered.com/app/1141220/", id: 1141220, description: "minesweeper but it's a roguelike! the game LOVES to bully you, but it also gives you good customisation" },
+    { name: "Boomerang X", link: "https://store.steampowered.com/app/1170060/", id: 1170060, description: "very slick arena shooter where you throw + recall a boomerang. and get new abilities" },
+    { name: "BPM: BULLETS PER MINUTE", link: "https://store.steampowered.com/app/1286350/", id: 1286350, description: "FPS roguelike where you can only shoot to the beat. they did something weird to the graphics and i think it is kinda cool?" },
+    { name: "Rogue Legacy 2", link: "https://store.steampowered.com/app/1253920/", id: 1253920, description: "did you play Rogue Legacy? it's that. but 2" },
+    { name: "Haiku, the Robot", link: "https://store.steampowered.com/app/1231880/", id: 1231880, description: "the comparisons to Hollow Knight are unavoidable; while not perfect, it manages to be a great mini-Hollow Knight while we wait for Silksong" },
+    { name: "TUNIC", link: "https://store.steampowered.com/app/553420/", id: 553420, description: "Legend of Zelda, but you only learn the mechanics through reading an inscrutable untranslated manual (which is one of the best things i've ever seen). SO MANY SECRETS" },
+    { name: "Chronicon", link: "https://store.steampowered.com/app/375480/", id: 375480, description: "pixel-art Path of Exile! not anywhere as deep but definitely still a good time for a while" },
+    { name: "Backpack Hero", link: "https://store.steampowered.com/app/1970580/", id: 1970580, description: "mostly too dumb for this game, but 3rd character is amazing. Slay the Spire but you arrange items on a grid instead of playing cards" },
+    { name: "Just King", link: "https://store.steampowered.com/app/1059980/", id: 1059980, description: "autochess-style arena think that- ah heck it's just slightly-different SNKRX so if you liked that then play this" },
+    { name: "Vampire Survivors", link: "https://store.steampowered.com/app/1794680/", id: 1794680, description: "literally spawned a genre of \"walking around while you mow down hordes of enemies with your upgrades\" games. great fun" },
+    { name: "20 Minutes Till Dawn", link: "https://store.steampowered.com/app/1966900/", id: 1966900, description: "Vampire Survivors but prettier and you actually have the task of aiming a gun! (which makes it have a bit more longevity)" },
+    { name: "Peglin", link: "https://store.steampowered.com/app/1296610/", id: 1296610, description: "it's a pachinko roguelike! my tip: spawn as many bombs as possible" },
+    { name: "Neophyte", link: "https://store.steampowered.com/app/1409530/", id: 1409530, description: "horde mode mini action roguelike thing. satisfyingly juicy, and quite diverse upgrades" },
 ]
