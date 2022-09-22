@@ -1,0 +1,23 @@
+@import '../variables.scss';
+
+.main {
+    padding: 0 30px;
+}
+
+.list {
+    display: flex;
+    flex-direction: column;
+}
+
+.postLink {
+    &:hover {
+        text-decoration: underline;
+    }
+}
+
+.postLinkDraft {
+    opacity: 0.3;
+    &:before {
+        content: '* ';
+    }
+}

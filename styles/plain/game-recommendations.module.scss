@@ -1,0 +1,13 @@
+@import '../variables.scss';
+
+.listContainer {
+    display: flex;
+    flex-direction: column;
+    padding: 30px;
+}
+
+.list {
+    margin: 0;
+    padding: 0;
+    max-width: 600px;
+}

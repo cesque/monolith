@@ -2,7 +2,8 @@ import React from 'react'
 import Head from 'next/head'
 import Image from 'next/image'
 import Link from 'next/link'
-import styles from '../styles/home.module.scss'
+import mainStyles from '../styles/home.module.scss'
+import plainStyles from '../styles/plain/home.module.scss'
 
 import { getDraftPosts, getPosts } from '../lib/posts'
 import Header from '../components/Header'
@@ -46,9 +47,10 @@ export async function getStaticProps(context) {
     }
 }
 
-export default class Home extends React.Component {
-
+export default class Home extends React.Component {    
     render() {
+        let styles = process.env.THEME == 'plain' ? plainStyles : mainStyles
+
         return (
             <div className={ styles.container }>
                 <Head>

@@ -1,0 +1,24 @@
+@import '../variables.scss';
+
+.header {
+    padding: 30px;
+}
+
+.headerDeep {
+    a.name {
+        text-decoration: underline;
+    }
+}
+
+.header h1 {
+    margin: 0;
+    display: flex;
+    align-items: center;
+    font-size: 1em;
+    font-weight: 500;
+}
+
+.separator {
+    margin: 0 10px;
+    padding-top: 0.1ch;
+}

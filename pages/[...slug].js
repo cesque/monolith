@@ -6,7 +6,8 @@ import { getPosts, getPost, getDraftPosts, uploadOrFetchMetaImage } from '../lib
 
 import config from '../lib/config'
 
-import styles from '../styles/post.module.scss'
+import mainStyles from '../styles/post.module.scss'
+import plainStyles from '../styles/plain/post.module.scss'
 import { getMetaData } from '../lib/meta.js'
 
 const elementsWithChildren = ['UL', 'OL']
@@ -140,11 +141,11 @@ export default class PostPage extends React.Component {
     
         let output = null
         switch(element.tag) {
-            case 'ol': output = <ol {...element.attributes}>
+            case 'ol': output = <ol {...element.attributes }>
                     { element.children.map(this.renderElement) }
                 </ol>
                 break
-            case 'ul': output = <ul {...element.attributes}>
+            case 'ul': output = <ul {...element.attributes }>
                     { element.children.map(this.renderElement) }
                 </ul>
                 break
@@ -162,6 +163,8 @@ export default class PostPage extends React.Component {
     }
 
     render() {
+        let styles = process.env.THEME == 'plain' ? plainStyles : mainStyles
+
         return <div className={ styles.container }>
             <Head>
                 <title>monolith ⏵ { this.props.post.title }</title>
@@ -178,7 +181,7 @@ export default class PostPage extends React.Component {
                 <header className={ styles.header }>
                     <h2>{ this.props.post.title }</h2>
                 </header>
-                <section className={ `ghost-content ${styles.content}`}>
+                <section className={ `ghost-content ${ styles.content } ${ process.env.THEME == 'plain' ? 'plain' : '' }`}>
                     { this.props.elements.map(this.renderElement) }
                 </section>
             </main>

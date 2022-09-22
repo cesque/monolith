@@ -1,7 +1,9 @@
 import React from 'react'
 import Head from 'next/head'
-import styles from '../styles/post.module.scss'
-import gameRecommendationStyles from '../styles/game-recommendations.module.scss'
+import mainStyles from '../styles/post.module.scss'
+import plainStyles from '../styles/plain/post.module.scss'
+import gameRecommendationStylesMain from '../styles/game-recommendations.module.scss'
+import gameRecommendationStylesPlain from '../styles/plain/game-recommendations.module.scss'
 
 import Header from '../components/Header'
 import Footer from '../components/Footer'
@@ -30,6 +32,9 @@ export async function getStaticProps(context) {
 
 export default class GameRecommendationsPage extends React.Component {
     render() {
+        let styles = process.env.THEME == 'plain' ? plainStyles : mainStyles
+        let gameRecommendationStyles = process.env.THEME == 'plain' ? gameRecommendationStylesPlain : gameRecommendationStylesMain
+
         return <div className={ styles.container }>
             <Head>
                 <title>monolith ⏵ game recommendations</title>

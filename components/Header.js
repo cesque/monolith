@@ -1,9 +1,12 @@
 import Link from 'next/link'
 import React from 'react'
-import styles from '../styles/header.module.scss'
+import mainStyles from '../styles/header.module.scss'
+import plainStyles from '../styles/plain/header.module.scss'
 
 export default class Header extends React.Component {
     render() {
+        let styles = process.env.THEME == 'plain' ? plainStyles : mainStyles;
+
         let symbols = '⏵█◆●▨◼⚊◪▼▲◈⬣⬢'
         let separator = symbols[Math.floor(Math.random() * symbols.length)]
 

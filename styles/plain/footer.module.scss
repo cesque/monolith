@@ -1,0 +1,29 @@
+@import '../variables.scss';
+
+.footer {
+    margin-top: 45px;
+    margin-bottom: 30px;
+    padding: 0 30px;
+}
+
+.footer a {
+    text-decoration: underline;
+}
+
+.inner {
+    display: flex;
+    flex-direction: column;
+}
+
+.row {
+    display: flex;
+    flex-direction: column;
+}
+
+.separator {
+    display: none;
+}
+
+.rowCopyright {
+    flex-direction: column-reverse;
+}

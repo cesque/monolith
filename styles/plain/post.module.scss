@@ -1,0 +1,23 @@
+@import '../variables.scss';
+
+.post {
+    display: flex;
+    flex-direction: column;
+
+    margin: 0;
+}
+
+.header {
+    padding: 0 30px;
+
+    h2 {
+        margin: 0;
+        font-weight: normal;
+    }
+}
+
+.content {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
