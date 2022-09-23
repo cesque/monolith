@@ -16,6 +16,9 @@
 
         b, strong {
             // padding: 3px 8px;
+            color: black;
+            background: white;
+            padding: 0;
             font-weight: bold;
         }
 
@@ -32,6 +35,9 @@
 
 .ghost-content.plain h2 {
     font-size: 1em;
+    background: none;
+    color: black;
+    padding: 0;
 }
 
 .ghost-content.plain .element-container {
