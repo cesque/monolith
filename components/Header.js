@@ -5,7 +5,7 @@ import plainStyles from '../styles/plain/header.module.scss'
 
 export default class Header extends React.Component {
     render() {
-        let styles = process.env.THEME == 'plain' ? plainStyles : mainStyles;
+        let styles = this.props.theme == 'plain' ? plainStyles : mainStyles;
 
         let symbols = '⏵█◆●▨◼⚊◪▼▲◈⬣⬢'
         let separator = symbols[Math.floor(Math.random() * symbols.length)]

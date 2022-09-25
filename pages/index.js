@@ -43,13 +43,14 @@ export async function getStaticProps(context) {
         props: {
             posts,
             metaImage,
+            theme: process.env.THEME,
         },
     }
 }
 
 export default class Home extends React.Component {    
     render() {
-        let styles = process.env.THEME == 'plain' ? plainStyles : mainStyles
+        let styles = this.props.theme == 'plain' ? plainStyles : mainStyles
 
         return (
             <div className={ styles.container }>
@@ -61,7 +62,7 @@ export default class Home extends React.Component {
                     { getMetaData('', 'blog', this.props.metaImage) }
                 </Head>
     
-                <Header />
+                <Header theme={ this.props.theme } />
     
                 <main className={ styles.main }>
                     <section className={ styles.list }>
@@ -76,7 +77,7 @@ export default class Home extends React.Component {
                     </section>
                 </main>
     
-                <Footer />
+                <Footer theme={ this.props.theme } />
             </div>
         )
     }

@@ -25,15 +25,16 @@ export async function getStaticProps(context) {
                 published_at: '2021-06-24T22:58:19.965Z',
                 updated_at: new Date().toISOString(),
                 id: '000000000000000000000000'
-            }
+            },
+            theme: process.env.THEME,
         }
     }
 }
 
 export default class GameRecommendationsPage extends React.Component {
     render() {
-        let styles = process.env.THEME == 'plain' ? plainStyles : mainStyles
-        let gameRecommendationStyles = process.env.THEME == 'plain' ? gameRecommendationStylesPlain : gameRecommendationStylesMain
+        let styles = this.props.theme == 'plain' ? plainStyles : mainStyles
+        let gameRecommendationStyles = this.props.theme == 'plain' ? gameRecommendationStylesPlain : gameRecommendationStylesMain
 
         return <div className={ styles.container }>
             <Head>
@@ -44,7 +45,7 @@ export default class GameRecommendationsPage extends React.Component {
                 { getMetaData('game recommendations', 'article', this.props.metaImage) }
             </Head>
         
-            <Header post={ this.props.post } />
+            <Header post={ this.props.post } theme={ this.props.theme } />
 
             <main className={ styles.post }>
                 <header className={ styles.header }>
@@ -53,13 +54,13 @@ export default class GameRecommendationsPage extends React.Component {
                 <section className={ styles.content }>
                     <div className={ gameRecommendationStyles.listContainer }>
                         <ul className={ gameRecommendationStyles.list }>
-                            { gamesList.map(game => <Game key={ game.name } isInList="true" {...game} />) }
+                            { gamesList.map(game => <Game key={ game.name } isInList="true" {...game} theme={ this.props.theme } />) }
                         </ul>
                     </div>
                 </section>
             </main>
 
-            <Footer post={ this.props.post } />
+            <Footer post={ this.props.post } theme={ this.props.theme } />
         </div>
     }
 }

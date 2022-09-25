@@ -105,7 +105,8 @@ export async function getStaticProps(context) {
             post,
             elements,
             context,
-            metaImage
+            metaImage,
+            theme: process.env.THEME,
         },
     }
 }
@@ -163,7 +164,7 @@ export default class PostPage extends React.Component {
     }
 
     render() {
-        let styles = process.env.THEME == 'plain' ? plainStyles : mainStyles
+        let styles = this.props.theme == 'plain' ? plainStyles : mainStyles
 
         return <div className={ styles.container }>
             <Head>
@@ -175,18 +176,18 @@ export default class PostPage extends React.Component {
 
             </Head>
         
-            <Header post={ this.props.post } />
+            <Header post={ this.props.post } theme={ this.props.theme } />
 
             <main className={ styles.post }>
                 <header className={ styles.header }>
                     <h2>{ this.props.post.title }</h2>
                 </header>
-                <section className={ `ghost-content ${ styles.content } ${ process.env.THEME == 'plain' ? 'plain' : '' }`}>
+                <section className={ `ghost-content ${ styles.content } theme-${ this.props.theme ?? 'main' }`}>
                     { this.props.elements.map(this.renderElement) }
                 </section>
             </main>
 
-            <Footer post={ this.props.post } />
+            <Footer post={ this.props.post } theme={ this.props.theme } />
         </div>
     }
 }

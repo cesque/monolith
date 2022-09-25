@@ -11,7 +11,7 @@ export default class Game extends React.Component {
     }
 
     render() {
-        let styles = process.env.THEME == 'plain' ? plainStyles : mainStyles
+        let styles = this.props.theme == 'plain' ? plainStyles : mainStyles
 
         let Tag = this.props.isInList ? 'li' : 'div'
 

@@ -10,7 +10,7 @@ export default class Footer extends React.Component {
 
         this.separator = '—'
 
-        this.styles = process.env.THEME == 'plain' ? plainStyles : mainStyles
+        this.styles = this.props.theme == 'plain' ? plainStyles : mainStyles
     }
 
     formatDate(date) {
