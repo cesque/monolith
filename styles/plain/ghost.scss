@@ -86,13 +86,13 @@
     figcaption {
         max-width: 100%;
         height: auto;
-        // padding: 10px 30px;
+        padding: 0;
         margin-top: 10px;
-        // font-size: 0.8rem;
-        // color: white;
+        font-size: 1em;
         font-weight: bold;
-        // background: black;
         line-height: 1.5;
+        background: none;
+        color: black;
     }
 }
 
@@ -117,6 +117,10 @@
 
     figcaption {
         margin: 15px 0;
+        color: black;
+        background: none;
+        font-size: 1em;
+        padding: 0;
     }
 }
 
@@ -242,15 +246,17 @@
 
 .ghost-content.theme-plain .element-container.blockquote {
     padding: 0;
-
-    @media (min-width: $breakpoint-small) {
-        padding: 0 50px;
-    }
+    margin: 0px 30px;
 }
+
 .ghost-content.theme-plain blockquote {
     // padding: 20px 50px;
     // background: black;
     // color: white;
+    background: none;
+    color: black;
+    border-left: 2px solid black;
+    padding: 0 15px;
 }
 
 
@@ -284,11 +290,11 @@
 }
 
 .ghost-content.theme-plain .element-container.pre {
-    // pre {
-    //     border: 2px solid black;
-    //     padding: 20px 20px;
-    //     overflow-x: auto;
-    // }
+    pre {
+        border: none;
+        padding: 0;
+        overflow-x: auto;
+    }
 
     // code {
     //     letter-spacing: 0.05rem;
