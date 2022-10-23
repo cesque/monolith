@@ -106,7 +106,7 @@ export async function getStaticProps(context) {
             elements,
             context,
             metaImage,
-            theme: process.env.THEME,
+            theme: process.env.theme ?? null,
         },
     }
 }

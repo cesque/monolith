@@ -26,7 +26,7 @@ export async function getStaticProps(context) {
                 updated_at: new Date().toISOString(),
                 id: '000000000000000000000000'
             },
-            theme: process.env.THEME,
+            theme: process.env.theme ?? null,
         }
     }
 }
