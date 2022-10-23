@@ -43,7 +43,7 @@ export async function getStaticProps(context) {
         props: {
             posts,
             metaImage,
-            theme: process.env.theme ?? null,
+            theme: process.env.THEME ?? null,
         },
     }
 }
