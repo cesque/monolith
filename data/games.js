@@ -133,4 +133,10 @@ export default [
     { name: "20 Minutes Till Dawn", link: "https://store.steampowered.com/app/1966900/", id: 1966900, description: "Vampire Survivors but prettier and you actually have the task of aiming a gun! (which makes it have a bit more longevity)" },
     { name: "Peglin", link: "https://store.steampowered.com/app/1296610/", id: 1296610, description: "it's a pachinko roguelike! my tip: spawn as many bombs as possible" },
     { name: "Neophyte", link: "https://store.steampowered.com/app/1409530/", id: 1409530, description: "horde mode mini action roguelike thing. satisfyingly juicy, and quite diverse upgrades" },
+
+    { name: "Virtual Circuit Board", link: "https://store.steampowered.com/app/1885690/", id: 1885690, description: "sandbox circuit board logic simulator... not too focused, not much of a game, but hell i like it" },
+    { name: "The Zachtronics Solitaire Collection", link: "https://store.steampowered.com/app/1988540/", id: 1988540, description: "i'm a little solitaire gremlin and i won't apologise for it" },
+    { name: "Boneraiser Minions", link: "https://store.steampowered.com/app/1944570/", id: 1944570, description: "Vampire Survivors, but with surprising depth. much combining of units, and lots of meta-progression. plus it has a card minigame too???" },
+    { name: "Battlefield 2042", link: "https://store.steampowered.com/app/1517290/", id: 1517290, description: "honestly i think this game has basically always been good. just play Sundance and wingsuit everywhere!" },
+    { name: "Omega Strikers", link: "https://store.steampowered.com/app/1869590/", id: 1869590, description: "kinda like Battlerite mixed with air hockey? pretty damn fun" },
 ]
